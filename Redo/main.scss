@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     
+}
+
+$primary-col: #FAA6FF;
+$seondary-col: #7353BA;
+$tertiary-col: #EFC3F5;
+$comp-col:#0F1020 ;
+$btn-col:#2F195F ;
+
+#section1 {
+    background-color:$tertiary-col;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.mainForm {
+    background-color: $comp-col;
+    width: 30vw;
+    height: 60vh;
+    align-self: center;
+    border-radius: 10px;
+    
+}

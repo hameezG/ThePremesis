@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#section1 {
+  background-color: #EFC3F5;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mainForm {
+  background-color: #0F1020;
+  width: 30vw;
+  height: 60vh;
+  align-self: center;
+  border-radius: 10px;
+}/*# sourceMappingURL=main.css.map */
