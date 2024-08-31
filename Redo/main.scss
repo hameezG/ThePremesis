@@ -6,7 +6,7 @@
 }
 
 $primary-col: #FAA6FF;
-$seondary-col: #7353BA;
+$secondary-col: #7353BA;
 $tertiary-col: #EFC3F5;
 $comp-col:#0F1020 ;
 $btn-col:#2F195F ;
@@ -16,15 +16,35 @@ $btn-col:#2F195F ;
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: space-evenly;
-    
+   justify-content: center;
 }
 
 .mainForm {
-    background-color: $comp-col;
-    width: 30vw;
-    height: 60vh;
+    background-color: $secondary-col;
+    width: 40vw;
+    height: 80vh;
     align-self: center;
     border-radius: 10px;
+    padding: 20px;
     
 }
+.form-top {
+    display: flex;
+    justify-content: space-between;
+}
+.tab-label {
+
+    background-color: $comp-col;
+    color: $primary-col;
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.form-middle {
+    align-self: center;
+}
+
