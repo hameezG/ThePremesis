@@ -2,7 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     
+   
+}
+@mixin primary-font {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin secondary-font {
+    font-family: "Hind Guntur", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 $primary-col: #FAA6FF;
@@ -11,40 +21,310 @@ $tertiary-col: #EFC3F5;
 $comp-col:#0F1020 ;
 $btn-col:#2F195F ;
 
-#section1 {
-    background-color:$tertiary-col;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-   justify-content: center;
+header {
+ 
+ background-color: $primary-col;
+ 
+
 }
 
-.mainForm {
-    background-color: $secondary-col;
-    width: 40vw;
-    height: 80vh;
-    align-self: center;
-    border-radius: 10px;
-    padding: 20px;
-    
-}
-.form-top {
+header .container {
+    width: 100vw;
+    height: 10vh;
+    background-color: $primary-col;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    padding: 0px 90px 0px 60px;
+    
+   
+    
+    
 }
-.tab-label {
+ 
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    color: $comp-col;
+}
+nav ul li {
+    margin: 0 15px;
+    @include primary-font;   
+   
+}
 
+#btnContainer {
+    display: flex;
+    gap: 30px
+}
+
+
+
+
+section .container {
+     
     background-color: $comp-col;
-    color: $primary-col;
-    font-size: 20px;
-    width: 100%;
-    height: 60px;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content:flex-start;
+    padding: 200px 75px;
+    position: relative;
+    
+
+}
+
+
+table, th, td {
+    border: 1px solid $primary-col;
+  	border-collapse: collapse;
+    color: $tertiary-col;
+    @include secondary-font;
+    
+}
+th, td {
+    padding: 10px;
+}
+
+#pop-up {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background-color:$tertiary-col;
+    z-index: 2;
+    left: 35%;
+    bottom: 10%;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+
+#btn-reg {
+    padding: 10px 20px;
+    border-radius: 20px;
+    @include button-styles1;
+  }
+  
+  #btn-close {
+    padding: 10px 20px;
+    border-radius: 20px;
+    @include button-styles3;
+  }
+  
+#pop-up form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 50px 0px;
+    margin: 40px;
+    
+}
+
+#pop-up input {
+       padding: 10px 40px;
+}
+
+
+#reg-btn {
+  position: absolute;
+  bottom: 4%;
+  left: 28%;
+  padding: 20px 80px;
+  border-radius: 3px;
+  @include button-styles2;
+}
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Button Styles */
+@mixin button-styles1 {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+  
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+  
+    &:hover {
+      background-color: var(--hover-color);
+    }
+  }
+  
+  @mixin button-styles2 {
+    position: relative;
+    width: 150px;
+    height: 55px;
+    border-radius: 45px;
+    border: none;
+    background-color: rgb(151, 95, 255);
+    color: white;
+    box-shadow: 
+      0px 10px 10px rgb(210, 187, 253) inset,
+      0px 5px 10px rgba(5, 5, 5, 0.212),
+      0px -10px 10px rgb(124, 54, 255) inset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &:hover {
+      animation: jello-horizontal 0.9s both;
+    }
+  }
+  
+  @mixin button-styles3 {
+    background-color: #FF6B6B;
+    color: white;
+    padding: 12px 24px;
     border-radius: 5px;
-    padding-top: 15px;
-    text-align: center;
-}
-
-.form-middle {
-    align-self: center;
-}
-
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #FF3B3B;
+    }
+  }
+  
+  @keyframes jello-horizontal {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
