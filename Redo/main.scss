@@ -1,3 +1,140 @@
+// ignore these paragraphs//
+/* Button Styles */
+@mixin button-styles1 {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+@mixin button-styles2 {
+  position: relative;
+  width: 150px;
+  height: 55px;
+  border-radius: 45px;
+  border: none;
+  background-color: rgb(151, 95, 255);
+  color: white;
+  box-shadow: 
+    0px 10px 10px rgb(210, 187, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212),
+    0px -10px 10px rgb(124, 54, 255) inset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    animation: jello-horizontal 0.9s both;
+  }
+}
+
+@mixin button-styles3 {
+  background-color: #FF6B6B;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #FF3B3B;
+  }
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//now get serious//
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -65,7 +202,7 @@ nav ul li {
 
 section .container {
      
-    background-color: $comp-col;
+    background-color: white;
     height: 90vh;
     width: 100vw;
     display: flex;
@@ -78,10 +215,11 @@ section .container {
 
 
 table, th, td {
-    border: 1px solid $primary-col;
+    border: 1px solid $comp-col;
   	border-collapse: collapse;
     color: $tertiary-col;
     @include secondary-font;
+    color:$comp-col;
     
 }
 th, td {
@@ -98,21 +236,12 @@ th, td {
     bottom: 10%;
     border-radius: 10px;
     padding: 10px;
+    display: none;
     
 }
 
 
-#btn-reg {
-    padding: 10px 20px;
-    border-radius: 20px;
-    @include button-styles1;
-  }
   
-  #btn-close {
-    padding: 10px 20px;
-    border-radius: 20px;
-    @include button-styles3;
-  }
   
 #pop-up form {
     display: flex;
@@ -125,19 +254,38 @@ th, td {
 }
 
 #pop-up input {
-       padding: 10px 40px;
+       padding: 10px 5px;
 }
 
 
 #reg-btn {
   position: absolute;
-  bottom: 4%;
-  left: 28%;
-  padding: 20px 80px;
-  border-radius: 3px;
-  @include button-styles2;
+  bottom: 2.5%;
+  left: 13%;
+  padding: 20px 50px !important;
+  border-radius: 200px !important;
+  @include button-styles1();
 }
 
+#close-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  @include button-styles2();
+  bottom: 12%;
+  left: 55%;
+
+}
+
+#btn-reg-home {
+  padding: 10px 20px;
+  border-radius: 20px;
+  @include button-styles1;
+}
+
+
+
+
+
  
 
 
@@ -145,7 +293,6 @@ th, td {
 
 
 
- 
 
 
 
@@ -234,97 +381,3 @@ th, td {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* Button Styles */
-@mixin button-styles1 {
-    --primary-color: #645bff;
-    --secondary-color: #fff;
-    --hover-color: #111;
-    --arrow-width: 10px;
-    --arrow-stroke: 2px;
-  
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    color: var(--secondary-color);
-    padding: 1em 1.8em;
-    background: var(--primary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-  
-    &:hover {
-      background-color: var(--hover-color);
-    }
-  }
-  
-  @mixin button-styles2 {
-    position: relative;
-    width: 150px;
-    height: 55px;
-    border-radius: 45px;
-    border: none;
-    background-color: rgb(151, 95, 255);
-    color: white;
-    box-shadow: 
-      0px 10px 10px rgb(210, 187, 253) inset,
-      0px 5px 10px rgba(5, 5, 5, 0.212),
-      0px -10px 10px rgb(124, 54, 255) inset;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    &:hover {
-      animation: jello-horizontal 0.9s both;
-    }
-  }
-  
-  @mixin button-styles3 {
-    background-color: #FF6B6B;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  
-    &:hover {
-      background-color: #FF3B3B;
-    }
-  }
-  
-  @keyframes jello-horizontal {
-    0% {
-      transform: scale3d(1, 1, 1);
-    }
-    30% {
-      transform: scale3d(1.25, 0.75, 1);
-    }
-    40% {
-      transform: scale3d(0.75, 1.25, 1);
-    }
-    50% {
-      transform: scale3d(1.15, 0.85, 1);
-    }
-    65% {
-      transform: scale3d(0.95, 1.05, 1);
-    }
-    75% {
-      transform: scale3d(1.05, 0.95, 1);
-    }
-    100% {
-      transform: scale3d(1, 1, 1);
-    }
-  }
